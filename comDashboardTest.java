@@ -1,6 +1,5 @@
 package DNSCompregTests;
 
-import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -48,28 +47,31 @@ public class comDashboardTest {
 
 	
 	@Test
-	public void comlogintodashboardpage()
+	public void comlogintodashboardpagetest()
 	{
 		
+		//compreg login to dashboard authentication
 		ComLoginPage ob=new ComLoginPage(driver);
 
 	
 		ob.setfieldvaluescomlogin("compreg.git.ch","Compreg@live");
 		ob.login();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));	
+		ob.animatorclick();
+	
+		
+		
+		//compreg dashboard page tests
+      comDashboardPage ob1= new comDashboardPage(driver);
+		
+		ob1.dashboardoverviewmenuclick();
+		ob1.dashboardupcomingevents();
+		ob1.dashboardupcomingeventsdetailsdisplay();
+		ob1.upcomingeventdetailsclick();
+		
 
 	}
 	
 
-	@Test
-	public void comdashboardpagetest()
-	{
-		comDashboardPage ob= new comDashboardPage(driver);
-		ob.dashboardcompreglogoimage();
-		
-		
-	}
-	
 	
 	@AfterMethod
 	public void closeb()
