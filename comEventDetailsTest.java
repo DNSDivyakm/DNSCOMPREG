@@ -75,6 +75,14 @@ public class comEventDetailsTest {
 		comEventDetailsPage ob2 = new comEventDetailsPage(driver);
 		
 		ob2.detailsbuttonineventdetailspage();
+		ob2.eventdetailsnamedisplay();
+		ob2.eventtypedropdown();
+		ob2.eventorganiserfield();
+		ob2.orgnisercontactdropdown();
+		ob2.enquirycontactdisplay();
+		ob2.enquiryemaildisplay();
+		ob2.venueeventdetails();
+		ob2.eventdetailsfield();
 
 	}
 	
