@@ -83,6 +83,16 @@ public class comEventDetailsTest {
 		ob2.enquiryemaildisplay();
 		ob2.venueeventdetails();
 		ob2.eventdetailsfield();
+		ob2.eventdetailsstartdate();
+		ob2.eventdetailsenddate();
+		ob2.eventdetailslastedate();
+		ob2.facebookeventdetails();
+		ob2.instagrameventdetails();
+		ob2.memoeventdetails();
+		ob2.websiteeventdetails();
+		ob2.addnewcontactlink();
+		ob2.addneworganiserwindow();
+		ob2.eventdetailsaddfilebutton();
 
 	}
 	
