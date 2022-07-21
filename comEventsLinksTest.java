@@ -1,5 +1,4 @@
 
-
 package DNSCompregTests;
 
 
@@ -13,10 +12,10 @@ import org.testng.annotations.Test;
 
 import DNSCompregPages.ComLoginPage;
 import DNSCompregPages.comDashboardPage;
-import DNSCompregPages.comEventDetailsPage;
+import DNSCompregPages.comEventsLinksPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class comEventDetailsTest {
+public class comEventsLinksTest {
 
 	WebDriver driver;
 	
@@ -71,34 +70,18 @@ public class comEventDetailsTest {
 		ob1.dashboardupcomingeventsdetailsdisplay();
 		ob1.upcomingeventdetailsclick();
 		
-		//compreg event details page tests
-		comEventDetailsPage ob2 = new comEventDetailsPage(driver);
+		//compreg events link tests
+		comEventsLinksPage ob2 = new comEventsLinksPage(driver);
+		ob2.websitelink();
+		ob2.emaillink();
+		ob2.enquirycontactlink();
+		ob2.ralliesbuttonclick();
+		ob2.detailsbuttonclick();
+		ob2.formsbuttonclick();
+		ob2.participantsbuttonclick();
+		ob2.organisedbylinkevents();
+
 		
-		ob2.detailsbuttonineventdetailspage();
-		ob2.eventdetailsnamedisplay();
-		ob2.eventtypedropdown();
-		ob2.eventorganiserfield();
-		ob2.orgnisercontactdropdown();
-		ob2.enquirycontactdisplay();
-		ob2.enquiryemaildisplay();
-		ob2.venueeventdetails();
-		ob2.eventdetailsfield();
-		ob2.eventdetailsstartdate();
-		ob2.eventdetailsenddate();
-		ob2.eventdetailslastedate();
-		ob2.facebookeventdetails();
-		ob2.instagrameventdetails();
-		ob2.memoeventdetails();
-		ob2.websiteeventdetails();
-		ob2.addnewcontactlink();
-		ob2.addneworganiserwindow();
-		ob2.eventdetailsaddfilebutton();
-		ob2.addfiledropdown();
-	    ob2.neworganiseranimatorclick();
-	    ob2.fileuploadbutton();
-	    ob2.eventdetailssubmit();
-	    ob2.imageuploadeventdetails();
-	    
 	}
 	
 

@@ -24,7 +24,7 @@ public class comEventDetailsPage {
 	}
 
 
-	
+
 	//checking value of event details name displayed is correct or not 
 		public void eventdetailsnamedisplay()
 		{
@@ -270,6 +270,19 @@ public class comEventDetailsPage {
 			}
 			
 			
+			//verification of new organiser created successfully animator
+			public void neworganiseranimatorclick()
+			{
+				WebElement neworganiseranimator = driver.findElement(By.xpath("//*[@class='Toastify__toast Toastify__toast-theme--light Toastify__toast--success']"));
+				neworganiseranimator.click();
+				System.out.println("new organiser animator clicked"+neworganiseranimator);
+        		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));	
+
+			
+
+				
+			}
+			
 			//verification of add file button 
 			public void eventdetailsaddfilebutton()
 			{
@@ -278,10 +291,64 @@ public class comEventDetailsPage {
 				System.out.println("add file button clicked"+addfilebutton);
 		
 			}
+			
+			
+			
+			//verification of addfile dropdown 
+			public void addfiledropdown()
+			{
+				
+				
+				Select addfiledropdownlist= new Select(driver.findElement(By.xpath("//*[@class='MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1']/div/div/div/form/div[2]/div[5]/div/div/div[2]/select")));
+			
+				addfiledropdownlist.selectByIndex(2);
+				System.out.println("dropdown value selected"+addfiledropdownlist);
+				}
+			
+			
+			//verification of file upload button 
+
+			public void fileuploadbutton()
+			{
+			
+				WebElement fileupload = driver.findElement(By.xpath("//*[@class='MuiGrid-root MuiGrid-container']/div[3]/div/button"));
+			if(fileupload.isEnabled()==true)
+			{
+				System.out.println("can upload file"+fileupload);
+
+			}
+			else
+			{
+				System.out.println("cannot upload file"+fileupload);
+
+			}
+			}		
+			
+			//verification of event details page submit button
+			public void eventdetailssubmit()
+			{
+				WebElement submitbutton = driver.findElement(By.xpath("//*[@class='MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1']/div/div/div/form/div[2]/div[6]/div/div/button"));
+				submitbutton.click();
+				System.out.println("submit button clicked"+submitbutton);
+				
+			}
+			
+			
+			//verification of image upload in event details page
+			public void imageuploadeventdetails()
+			{
+				WebElement imageupload = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[3]/div/div/div/img"));
+				imageupload.click();
+				System.out.println("image uploaded click"+imageupload);
 
 			}
 			
-		
+
+			}
+			
+			
+			
+			
 
 	 
 	
