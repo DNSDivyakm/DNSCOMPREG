@@ -59,7 +59,7 @@ public class comEventDetailsPage {
 		public void eventorganiserfield()
 		{
 			
-			WebElement eventorganiser = driver.findElement(By.xpath("//*[@class='MuiAutocomplete-root MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon']/div/div"));
+			WebElement eventorganiser = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[5]/div/div/div/div/form/div[2]/div[2]/div/div/div/div"));
 			eventorganiser.click();
 			System.out.println("event organiser clicked"+eventorganiser);
 			
@@ -70,9 +70,9 @@ public class comEventDetailsPage {
 		public void orgnisercontactdropdown()
 		{
 			
-			Select organisercontact = new Select(driver.findElement(By.xpath("//*[@class='MuiBox-root jss148 jss133']/div[2]/div[2]/select")));
-			organisercontact.selectByIndex(1);
-			System.out.println("organisercontact selected"+organisercontact);
+			Select organisercontact = new Select(driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[5]/div/div/div/div/form/div[2]/div[2]/div[2]/select")));
+			organisercontact.selectByIndex(2);
+			System.out.println("organiser contact selected"+organisercontact);
 		}
 	
 		
@@ -90,7 +90,7 @@ public class comEventDetailsPage {
 	//checking value of enquiry contact displayed is correct or not 
 			public void enquirycontactdisplay()
 			{
-				WebElement enquirycontact=driver.findElement(By.xpath("//*[@class='MuiBox-root jss148 jss133']/div[2]/div[3]/input"));
+				WebElement enquirycontact=driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[5]/div/div/div/div/form/div[2]/div[2]/div[3]/input"));
 				System.out.println(enquirycontact);
 	             if(enquirycontact.isDisplayed()==true)
 						{
@@ -109,7 +109,7 @@ public class comEventDetailsPage {
 			//checking value of enquiry email displayed is correct or not 
 			public void enquiryemaildisplay()
 			{
-				WebElement enquiryemail=driver.findElement(By.xpath("//*[@class='MuiBox-root jss148 jss133']/div[2]/div[4]/input"));
+				WebElement enquiryemail=driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[5]/div/div/div/div/form/div[2]/div[2]/div[4]/input"));
 				System.out.println(enquiryemail);
 	             if(enquiryemail.isDisplayed()==true)
 						{
@@ -128,7 +128,7 @@ public class comEventDetailsPage {
 			//setting values to venue field
 			public void venueeventdetails()
 			{
-				WebElement venue=driver.findElement(By.xpath("//*[@class='MuiBox-root jss148 jss133']/div[3]/div/input"));
+				WebElement venue=driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[5]/div/div/div/div/form/div[2]/div[3]/div/input"));
 				venue.sendKeys("dfsddsdf");
 			}
 			
@@ -136,7 +136,7 @@ public class comEventDetailsPage {
 			//setting values to event details field
 			public void eventdetailsfield()
 			{
-				WebElement eventdetails=driver.findElement(By.xpath("//*[@class='MuiBox-root jss148 jss133']/div[3]/div[3]/textarea"));
+				WebElement eventdetails=driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[5]/div/div/div/div/form/div[2]/div[3]/div[3]/textarea"));
 				eventdetails.sendKeys("bsdbsndmbbnmndsbfmnsdbfnmdsbfmndbmnsdbfmnsdbmnsdmbd");
         		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));	
 
@@ -147,7 +147,7 @@ public class comEventDetailsPage {
 			//verification of start date
 			public void eventdetailsstartdate()
 			{
-				WebElement startdate=driver.findElement(By.xpath("//*[@class='MuiBox-root jss148 jss133']/div/div[3]/div"));
+				WebElement startdate=driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[5]/div/div/div/div/form/div[2]/div/div[3]/div/div"));
                 if(startdate.isDisplayed()==true)
                 {
                 	System.out.println("startdate displayed 21/07/2022");
@@ -161,7 +161,7 @@ public class comEventDetailsPage {
 			//verification of end date
 			public void eventdetailsenddate()
 			{
-				WebElement enddate=driver.findElement(By.xpath("//*[@class='MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3']/div[4]/div/div/input"));
+				WebElement enddate=driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[5]/div/div/div/div/form/div[2]/div/div[4]/div/div"));
                 if(enddate.isDisplayed()==true)
                 {
                 	System.out.println("enddate displayed");
@@ -172,10 +172,10 @@ public class comEventDetailsPage {
 			
 
 			//verification of last date of registration
-			public void eventdetailslastedate()
+			public void eventdetailslastdate()
 			{
 		
-				WebElement lastdate=driver.findElement(By.xpath("//*[@class='MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3']/div[4]/div/div/input"));
+				WebElement lastdate=driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[5]/div/div/div/div/form/div[2]/div[3]/div[2]/div/div"));
                 if(lastdate.isDisplayed()==true)
                 {
                 	System.out.println("lastdate displayed");
@@ -190,7 +190,7 @@ public class comEventDetailsPage {
 			
 			public void websiteeventdetails()
 			{
-				WebElement website=driver.findElement(By.xpath("//*[@class='MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1']/div/div/div/form/div[2]/div[3]/div[4]/input"));
+				WebElement website=driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[5]/div/div/div/div/form/div[2]/div[3]/div[4]/input"));
 				if(website.isDisplayed()==true)
                 {
                 	System.out.println("website displayed");
@@ -203,7 +203,7 @@ public class comEventDetailsPage {
 			
 			public void facebookeventdetails()
 			{
-				WebElement facebook=driver.findElement(By.xpath("//*[@class='MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1']/div/div/div/form/div[2]/div[4]/div/input"));
+				WebElement facebook=driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[5]/div/div/div/div/form/div[2]/div[4]/div/input"));
 				if(facebook.isDisplayed()==true)
                 {
                 	System.out.println("facebookurl displayed");
@@ -213,7 +213,7 @@ public class comEventDetailsPage {
 			
 			public void instagrameventdetails()
 			{
-				WebElement instagram=driver.findElement(By.xpath("//*[@class='MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1']/div/div/div/form/div[2]/div[4]/div[2]/input"));
+				WebElement instagram=driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[5]/div/div/div/div/form/div[2]/div[4]/div[2]/input"));
 				if(instagram.isDisplayed()==true)
                 {
                 	System.out.println("instagramurl displayed");
@@ -224,7 +224,7 @@ public class comEventDetailsPage {
 			
 			public void memoeventdetails()
 			{
-				WebElement memo=driver.findElement(By.xpath("//*[@class='MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1']/div/div/div/form/div[2]/div[4]/div[3]/textarea"));
+				WebElement memo=driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[5]/div/div/div/div/form/div[2]/div[4]/div[3]/textarea"));
 				if(memo.isDisplayed()==true)
                 {
                 	System.out.println("memo displayed");
@@ -265,7 +265,7 @@ public class comEventDetailsPage {
 				
 				WebElement addneworganisersubmit= driver.findElement(By.xpath("//*[@id='transition-modal-description']/form/div/div[5]/div/div/button"));
 				addneworganisersubmit.click();
-				System.out.println("add new organiser contact link clicked"+addneworganisersubmit);
+				System.out.println("add new organiser submit button clicked"+addneworganisersubmit);
 
 			}
 			
@@ -278,15 +278,13 @@ public class comEventDetailsPage {
 				System.out.println("new organiser animator clicked"+neworganiseranimator);
         		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));	
 
-			
-
-				
 			}
+			
 			
 			//verification of add file button 
 			public void eventdetailsaddfilebutton()
 			{
-				WebElement addfilebutton = driver.findElement(By.xpath("//*[@class='MuiBox-root jss148 jss133']/div[5]/div/button"));
+				WebElement addfilebutton = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[5]/div/div/div/div/form/div[2]/div[5]/div/button/span"));
 				addfilebutton.click();
 				System.out.println("add file button clicked"+addfilebutton);
 		
@@ -342,6 +340,8 @@ public class comEventDetailsPage {
 				System.out.println("image uploaded click"+imageupload);
 
 			}
+			
+			
 			
 
 			}
