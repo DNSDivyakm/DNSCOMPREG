@@ -1,0 +1,294 @@
+package DNSCompregModule1Pages;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+public class comUserDashboardPage {
+
+	WebDriver driver;
+	
+	
+	
+	public comUserDashboardPage(WebDriver driver)
+	{
+		this.driver=driver;
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));	
+	
+
+	}
+	
+	
+	//verification of overview menu click in user's page
+	
+	public void userdashboardoverviewclick()
+	{
+		WebElement overviewclick = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div/div/div[2]/div/ul/li/a/span"));
+		
+		overviewclick.click();
+		
+		System.out.println("overview menu clicked in user dashboard page"+overviewclick);
+	} 
+
+	
+	//verification of overview icon in user's page
+	
+		public void useroverviewicon()
+		{
+			WebElement useroverviewicon = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div/div/div[2]/div/ul/li/a/div"));
+			if(useroverviewicon.isDisplayed()==true)
+			{
+				System.out.println("overview icon is displayed"+useroverviewicon);
+
+			}
+
+		}
+	
+		
+		//verification of overview heading in user's page
+		
+		public void useroverviewheading()
+		{
+			WebElement overviewheading = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[2]/div/div/h3"));
+			if(overviewheading.isDisplayed()==true)
+			{
+				System.out.println("overview heading is displayed"+overviewheading);
+
+			}
+
+		}
+
+	
+	//verification of upcoming events click in user's page
+	
+	public void userupcomingeventsclick() 
+	{
+		
+		WebElement upcomingeventsclick = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[3]/div/div/div"));
+		
+		upcomingeventsclick.click();
+		
+		System.out.println("upcoming events clicked in user dashboard page"+upcomingeventsclick);
+
+	}
+	
+	
+	//verification of upcoming events heading in user's page
+	
+			public void userupcomingeventsheading()
+			{
+				WebElement upcomingeventsheading = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[3]/div[2]/h3"));
+				if(upcomingeventsheading.isDisplayed()==true)
+				{
+					System.out.println("upcoming events heading is displayed"+upcomingeventsheading);
+
+				}
+
+			}
+			
+			
+			//verification of user's upcoming events details window
+			
+			public void upcomingeventsdetailswindow()
+			{
+				
+				//verification of user's upcoming events details window display
+				
+				WebElement upcomingeventswindowdisplay = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[3]/div[2]/div"));
+				if(upcomingeventswindowdisplay.isDisplayed()==true)
+				{
+					System.out.println("upcoming events details window is displayed"+upcomingeventswindowdisplay);
+
+				}
+				
+				
+				//verification of event name heading in upcoming events window
+				
+				
+				WebElement upcomingeventseventname = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[3]/div[2]/div/div/div/div[2]/h5"));
+				if(upcomingeventseventname.isDisplayed()==true)
+				{
+					System.out.println("event name is displayed in upcoming events window"+upcomingeventseventname);
+
+				}
+				
+				
+				//verification of event start and end date in upcoming events window
+				
+				
+				WebElement upcomingeventstartenddate = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[3]/div[2]/div/div/div/div[2]/p"));
+				if(upcomingeventswindowdisplay.isDisplayed()==true)
+				{
+					System.out.println("event start and end date is displayed upcoming events details window"+upcomingeventstartenddate);
+
+				}
+				
+				
+				//verification of event status in upcoming events window
+
+				
+				WebElement upcomingeventsstatus = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[3]/div[2]/div/div/div/div[2]/p[2]"));
+				if(upcomingeventsstatus.isDisplayed()==true)
+				{
+					System.out.println("event status is displayed in upcoming events details window"+upcomingeventsstatus);
+
+				}
+				
+				
+				//verification of events count in upcoming events window
+
+				
+				WebElement upcomingeventscount = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[3]/div[2]/div/div/div/div[2]/div/div/h3"));
+				if(upcomingeventscount.isDisplayed()==true)
+				{
+					System.out.println("event counts is displayed in upcoming events details window"+upcomingeventscount);
+
+				}
+				
+				
+				//verification of flag icon in upcoming events window
+
+				
+				WebElement upcomingeventsflagicon = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[3]/div[2]/div/div/div/div[2]/div/div//*[name()='svg']"));
+				if(upcomingeventsflagicon.isDisplayed()==true)
+				{
+					System.out.println("flag icon is displayed upcoming events details window "+upcomingeventsflagicon);
+
+				}
+				
+				
+				//verification of total count of participants in upcoming events window
+
+				WebElement upcomingeventsparticipantscount = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[3]/div[2]/div/div/div/div[2]/div/div[2]/h3"));
+				if(upcomingeventsparticipantscount.isDisplayed()==true)
+				{
+					System.out.println("participants total count is displayed upcoming events details window "+upcomingeventsparticipantscount);
+
+				}
+				
+				
+				//verification of participants icon in upcoming events window
+
+				WebElement upcomingeventsparticipantsicon = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[3]/div[2]/div/div/div/div[2]/div/div[2]//*[name()='svg']"));
+				if(upcomingeventsparticipantsicon.isDisplayed()==true)
+				{
+					System.out.println("participants icon is displayed upcoming events details window "+upcomingeventsparticipantsicon);
+
+				}
+	}
+			
+			
+			
+			
+			//verification of change username in the dashboard
+			
+			
+			public void dashboardchangeusername()
+			{
+				
+				//verification of change username in dashboard
+				WebElement dashboardchangeusernameclick = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[3]/div/div[3]/div"));
+				dashboardchangeusernameclick.click();
+				System.out.println("parcipants change username in dashboard is clicked "+dashboardchangeusernameclick);
+
+				
+				
+				//verification of change username window heading
+				
+				WebElement changeusernamewindowheading = driver.findElement(By.xpath("//*[@role='presentation']/div/div/h2"));
+				if(changeusernamewindowheading.isDisplayed()==true)
+				{
+					System.out.println("change username heading is displayed "+changeusernamewindowheading);
+
+				}
+				
+				
+				
+				//verification of change username window username textfield
+				
+				
+				
+			//driver.findElement(By.xpath("//*[@role='presentation']/div/div[2]/form/input")).clear();
+			WebElement changeusernamewindowusernamefield= driver.findElement(By.xpath("//*[@role='presentation']/div/div[2]/form/input"));
+			changeusernamewindowusernamefield.sendKeys(Keys.CONTROL, Keys.chord("a")); //select all text in textbox
+			changeusernamewindowusernamefield.sendKeys(Keys.BACK_SPACE); //delete it
+			changeusernamewindowusernamefield.sendKeys("divyakm1988");
+			System.out.println("new username entered in textfield"+changeusernamewindowusernamefield);
+				
+				
+				
+				//verification of change username window submit button - commented to proceed with next tests
+
+//				WebElement changeusernamewindowsubmit = driver.findElement(By.xpath("//*[@role='presentation']/div[3]/div[2]/form/div/button"));
+//				changeusernamewindowsubmit.click();
+//				System.out.println("submit button clicked"+changeusernamewindowsubmit);
+
+				
+				
+				//verification of change username window close
+				
+				WebElement changeusernamewindowclose = driver.findElement(By.xpath("//*[@role='presentation']/div[3]//*[name()='svg']"));
+
+				changeusernamewindowclose.click();
+				System.out.println("parcipants change username close button is clicked "+changeusernamewindowclose);	
+				
+			}
+			
+			
+			
+			
+			//verification of user profile details
+			public void dashboarduserprofiledetails()
+			{
+				
+				//verification of user's firstname
+				WebElement dashboardusername = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[2]/div/div[2]/div[2]/div/div/div/div/button/span/h6"));
+				if(dashboardusername.isDisplayed()==true)
+				{
+					System.out.println("user's firstname is displayed in dashboard "+dashboardusername);
+
+				}
+				
+				
+				//verification of user's profile image
+
+				
+				WebElement dashboardprofileimage = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[2]/div/div[2]/div[2]/div/div/div/div/button/span/img"));
+				if(dashboardprofileimage.isDisplayed()==true)
+				{
+					System.out.println("user's profile image is displayed in dashboard  "+dashboardprofileimage);
+
+				}
+				
+				
+				//verification of user's firstname and image click
+				
+				WebElement dashboardnameandimageclick = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[2]/div/div[2]/div[2]/div/div/div/div/button/span"));
+				dashboardnameandimageclick.click();
+				System.out.println("user's name and image clicked"+dashboardprofileimage);
+				
+				
+				
+				//verification of participant profile click
+				
+				WebElement participantprofileclick = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[2]/div/div[2]/div[2]/div/div/div/div/div/div/ul/a"));
+				participantprofileclick.click();
+				System.out.println("participants prifile link is clicked and redirected to the page"+participantprofileclick);
+
+				
+			}			
+	
+	
+}
+
+
+
+
+
+
+
+
+
