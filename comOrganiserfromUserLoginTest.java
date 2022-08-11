@@ -10,11 +10,11 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import DNSCompregModule1Pages.comUserDashboardPage;
+import DNSCompregModule1Pages.comOrganiserfromUserLoginPage;
 import DNSCompregModule1Pages.comUserLoginPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class comUserDashboardTest {
+public class comOrganiserfromUserLoginTest {
 
 	WebDriver driver;
 	
@@ -42,32 +42,29 @@ public class comUserDashboardTest {
 	}
 	
 	@Test
-	public void comuserdashboardtest() 
+	public void comloginpagetest() 
 	{
+		
+		
 		
 		comUserLoginPage ob=new comUserLoginPage(driver);
 		
 		// verification of user login in compreg page 
 		ob.setfieldvaluescomuserlogin("divyakm1988","divyakm1988");
+				
+				
 		//login button click
-		ob.login();
+				ob.login();
 
 		//login successfully animator
 		ob.animatorclick();
 		
-		
-		comUserDashboardPage ob2=new comUserDashboardPage(driver);
-		
-		ob2.userdashboardoverviewclick();	
-		ob2.useroverviewicon();
-		ob2.useroverviewheading();
-		ob2.userupcomingeventsclick();	
-		ob2.userupcomingeventsheading();
-		ob2.upcomingeventsdetailswindow();
-		ob2.dashboardchangeusername();
-		ob2.dashboarduserprofiledetails();
-		ob2.participantprofileclick();
-		ob2.participantprofiledetailsfromprofileclickdetails();
+		comOrganiserfromUserLoginPage ob2 = new comOrganiserfromUserLoginPage(driver);
+		ob2.organiserdetailsclick();
+		ob2.organiserdetailsfieldsdisplay();
+		ob2.organisercontactdislay();
+		ob2.organiserdetailstotalcountdisplay();
+		ob2.mailidandphonedisplay();
 		
 
 	}

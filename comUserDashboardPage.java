@@ -181,7 +181,7 @@ public class comUserDashboardPage {
 	}
 			
 			
-			
+		
 			
 			//verification of change username in the dashboard
 			
@@ -211,7 +211,6 @@ public class comUserDashboardPage {
 				
 				
 				
-			//driver.findElement(By.xpath("//*[@role='presentation']/div/div[2]/form/input")).clear();
 			WebElement changeusernamewindowusernamefield= driver.findElement(By.xpath("//*[@role='presentation']/div/div[2]/form/input"));
 			changeusernamewindowusernamefield.sendKeys(Keys.CONTROL, Keys.chord("a")); //select all text in textbox
 			changeusernamewindowusernamefield.sendKeys(Keys.BACK_SPACE); //delete it
@@ -233,9 +232,10 @@ public class comUserDashboardPage {
 				WebElement changeusernamewindowclose = driver.findElement(By.xpath("//*[@role='presentation']/div[3]//*[name()='svg']"));
 
 				changeusernamewindowclose.click();
-				System.out.println("parcipants change username close button is clicked "+changeusernamewindowclose);	
+				System.out.println("participants change username close button is clicked "+changeusernamewindowclose);	
 				
 			}
+			
 			
 			
 			
@@ -268,23 +268,176 @@ public class comUserDashboardPage {
 				
 				WebElement dashboardnameandimageclick = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[2]/div/div[2]/div[2]/div/div/div/div/button/span"));
 				dashboardnameandimageclick.click();
-				System.out.println("user's name and image clicked"+dashboardprofileimage);
+				System.out.println("user's name and image clicked"+dashboardnameandimageclick);
 				
 				
-				
-				//verification of participant profile click
-				
+			}	
+			
+			
+			
+			//verification of participant profile click
+			public void participantprofileclick()
+			{
 				WebElement participantprofileclick = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[2]/div/div[2]/div[2]/div/div/div/div/div/div/ul/a"));
 				participantprofileclick.click();
-				System.out.println("participants prifile link is clicked and redirected to the page"+participantprofileclick);
+				System.out.println("participants profile link is clicked and redirected to the page"+participantprofileclick);
+
+			}
+			
+			
+			
+			
+			
+			
+			//verification of participant details
+			
+			public void participantprofiledetailsfromprofileclickdetails()
+			{
+				
+				//verification of firstname field
+				
+				WebElement participantfirstname = driver.findElement(By.xpath("//*[@class='MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1']/div/div/div/form/div[2]/div/div/input"));			
+			
+				
+				participantfirstname.sendKeys(Keys.CONTROL, Keys.chord("a")); //select all text in textbox
+				participantfirstname.sendKeys(Keys.BACK_SPACE); //delete it
+				participantfirstname.sendKeys("Divya");
+				System.out.println("firstname textfield edited"+participantfirstname);
+				
+				
+				//verification of lastname field
+				
+				WebElement participantlastname = driver.findElement(By.name("lastName"));
+				if(participantlastname.isEnabled()==true)
+				{
+					System.out.println("lastname textfield editable"+participantlastname);
+
+				}
 
 				
-			}			
-	
-	
+				//verification of username field
+				
+
+				WebElement participantusername = driver.findElement(By.name("username"));
+				if(participantusername.isEnabled()==true)
+				{
+					System.out.println("username textfield editable"+participantusername);
+
+				}
+				
+				
+				//verification of email field
+				
+				
+				WebElement participantemail = driver.findElement(By.name("email"));
+				if(participantemail.isEnabled()==true)
+				{
+					System.out.println("email textfield editable"+participantemail);
+
+				}
+				
+				
+				//verification of phone field
+				
+				
+				WebElement participantphone = driver.findElement(By.name("phone"));
+				if(participantphone.isEnabled()==true)
+				{
+					System.out.println("phone textfield editable"+participantphone);
+
+				}
+				
+				
+				//verification of Address Line 1 field
+				
+				WebElement participantaddress = driver.findElement(By.name("address1"));
+				if(participantaddress.isEnabled()==true)
+				{
+					System.out.println("Address Line 1 textfield editable"+participantaddress);
+
+				}
+				
+				
+				//verification of Street field
+				
+				WebElement participantstreet = driver.findElement(By.name("street"));
+				if(participantstreet.isEnabled()==true)
+				{
+					System.out.println("street textfield editable"+participantstreet);
+
+				}
+				
+				
+				//verification of Postcode field
+				
+				WebElement participantpostcode = driver.findElement(By.name("postcode"));
+				if(participantpostcode.isEnabled()==true)
+				{
+					System.out.println("postcode textfield editable"+participantpostcode);
+
+				}
+				
+				
+				//verification of City field
+				
+				WebElement participantcity = driver.findElement(By.name("city"));
+				if(participantcity.isEnabled()==true)
+				{
+					System.out.println("city textfield editable"+participantcity);
+
+				}
+				
+				
+				//verification of State field
+				
+				WebElement participantstate = driver.findElement(By.name("state"));
+				if(participantstate.isEnabled()==true)
+				{
+					System.out.println("state textfield editable"+participantstate);
+
+				}
+				
+				
+				//verification of Country field
+				
+				WebElement participantcountry = driver.findElement(By.name("country"));
+				if(participantcountry.isEnabled()==true)
+				{
+					System.out.println("country textfield editable"+participantcountry);
+
+				}
+				
+				
+				//verification of Facebook URL field
+				
+				WebElement participantfacebookurl = driver.findElement(By.name("facebookUrl"));
+				if(participantfacebookurl.isEnabled()==true)
+				{
+					System.out.println("facebook url textfield editable"+participantfacebookurl);
+
+				}
+				
+				
+				//verification of Instagram URL field
+				
+				WebElement participantinstagram = driver.findElement(By.name("instagramUrl"));
+				participantinstagram.sendKeys(Keys.CONTROL, Keys.chord("a")); //select all text in textbox
+				participantinstagram.sendKeys(Keys.BACK_SPACE); //delete it
+				participantinstagram.sendKeys("adasdsad");
+				System.out.println("instagram url textfield edited"+participantinstagram);
+				
+				
+				
+				//verification of submit click
+				
+				WebElement participantsubmit = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[5]/div/div/div/form/div[2]/div[7]/div/div/button"));
+				participantsubmit.click();
+				System.out.println("submit button clicked"+participantsubmit);
+				
+			}
+				
+			
 }
-
-
 
 
 

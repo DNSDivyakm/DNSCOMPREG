@@ -10,6 +10,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import DNSCompregModule1Pages.comUserDashboardPage;
 import DNSCompregModule1Pages.comUserLoginPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -54,7 +55,7 @@ public class comUserLoginTest {
 
 		
 		// verification of user login in compreg page 
-		ob.setfieldvaluescomuserlogin("divyakm88","12345678");
+		ob.setfieldvaluescomuserlogin("divyakm1988","divyakm1988");
 	
 		
 		//login button click
@@ -73,7 +74,21 @@ public class comUserLoginTest {
 		ob.compreglogoimagedisplay();
 		//login successfully animator
 		ob.animatorclick();
+	
 		
+
+		comUserDashboardPage ob2=new comUserDashboardPage(driver);
+		ob2.userdashboardoverviewclick();	
+		ob2.dashboarduserprofiledetails();
+
+		
+		ob.changeusernameclick();
+		ob.changepasswordclick();
+		ob.usersignoutclickcancel();
+	//	ob.usersignoutclickyes();
+		ob.hellowelcomeclick();
+		ob.hellowelcomeimage();
+
 
 	}
 	
