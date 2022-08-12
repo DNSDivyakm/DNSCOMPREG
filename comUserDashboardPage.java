@@ -24,8 +24,9 @@ public class comUserDashboardPage {
 	
 	//verification of overview menu click in user's page
 	
-	public void userdashboardoverviewclick()
+	public void userdashboardoverviewclick() throws InterruptedException
 	{
+		Thread.sleep(1000);
 		WebElement overviewclick = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div/div/div[2]/div/ul/li/a/span"));
 		
 		overviewclick.click();
@@ -64,9 +65,9 @@ public class comUserDashboardPage {
 	
 	//verification of upcoming events click in user's page
 	
-	public void userupcomingeventsclick() 
+	public void userupcomingeventsclick() throws InterruptedException 
 	{
-		
+		Thread.sleep(1000);
 		WebElement upcomingeventsclick = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[3]/div/div/div"));
 		
 		upcomingeventsclick.click();
@@ -186,10 +187,12 @@ public class comUserDashboardPage {
 			//verification of change username in the dashboard
 			
 			
-			public void dashboardchangeusername()
+			public void dashboardchangeusername() throws InterruptedException
 			{
 				
 				//verification of change username in dashboard
+				
+				Thread.sleep(2000);
 				WebElement dashboardchangeusernameclick = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[3]/div/div[3]/div"));
 				dashboardchangeusernameclick.click();
 				System.out.println("parcipants change username in dashboard is clicked "+dashboardchangeusernameclick);
@@ -210,12 +213,12 @@ public class comUserDashboardPage {
 				//verification of change username window username textfield
 				
 				
-				
-			WebElement changeusernamewindowusernamefield= driver.findElement(By.xpath("//*[@role='presentation']/div/div[2]/form/input"));
-			changeusernamewindowusernamefield.sendKeys(Keys.CONTROL, Keys.chord("a")); //select all text in textbox
-			changeusernamewindowusernamefield.sendKeys(Keys.BACK_SPACE); //delete it
-			changeusernamewindowusernamefield.sendKeys("divyakm1988");
-			System.out.println("new username entered in textfield"+changeusernamewindowusernamefield);
+				Thread.sleep(1000);
+				WebElement changeusernamewindowusernamefield= driver.findElement(By.xpath("//*[@role='presentation']/div/div[2]/form/input"));
+				changeusernamewindowusernamefield.sendKeys(Keys.CONTROL, Keys.chord("a")); //select all text in textbox
+				changeusernamewindowusernamefield.sendKeys(Keys.BACK_SPACE); //delete it
+				changeusernamewindowusernamefield.sendKeys("divyakm1988");
+				System.out.println("new username entered in textfield"+changeusernamewindowusernamefield);
 				
 				
 				
@@ -229,6 +232,7 @@ public class comUserDashboardPage {
 				
 				//verification of change username window close
 				
+				Thread.sleep(1000);
 				WebElement changeusernamewindowclose = driver.findElement(By.xpath("//*[@role='presentation']/div[3]//*[name()='svg']"));
 
 				changeusernamewindowclose.click();
@@ -241,7 +245,7 @@ public class comUserDashboardPage {
 			
 			
 			//verification of user profile details
-			public void dashboarduserprofiledetails()
+			public void dashboarduserprofiledetails() throws InterruptedException
 			{
 				
 				//verification of user's firstname
@@ -266,6 +270,7 @@ public class comUserDashboardPage {
 				
 				//verification of user's firstname and image click
 				
+				Thread.sleep(1000);
 				WebElement dashboardnameandimageclick = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[2]/div/div[2]/div[2]/div/div/div/div/button/span"));
 				dashboardnameandimageclick.click();
 				System.out.println("user's name and image clicked"+dashboardnameandimageclick);
@@ -276,8 +281,10 @@ public class comUserDashboardPage {
 			
 			
 			//verification of participant profile click
-			public void participantprofileclick()
+			public void participantprofileclick() throws InterruptedException
 			{
+				
+				Thread.sleep(1000);
 				WebElement participantprofileclick = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[2]/div/div[2]/div[2]/div/div/div/div/div/div/ul/a"));
 				participantprofileclick.click();
 				System.out.println("participants profile link is clicked and redirected to the page"+participantprofileclick);
@@ -291,7 +298,7 @@ public class comUserDashboardPage {
 			
 			//verification of participant details
 			
-			public void participantprofiledetailsfromprofileclickdetails()
+			public void participantprofiledetailsfromprofileclickdetails() throws InterruptedException
 			{
 				
 				//verification of firstname field
@@ -430,6 +437,7 @@ public class comUserDashboardPage {
 				
 				//verification of submit click
 				
+				Thread.sleep(2000);
 				WebElement participantsubmit = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[5]/div/div/div/form/div[2]/div[7]/div/div/button"));
 				participantsubmit.click();
 				System.out.println("submit button clicked"+participantsubmit);

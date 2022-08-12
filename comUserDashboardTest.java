@@ -42,7 +42,7 @@ public class comUserDashboardTest {
 	}
 	
 	@Test
-	public void comuserdashboardtest() 
+	public void comuserdashboardtest() throws InterruptedException 
 	{
 		
 		comUserLoginPage ob=new comUserLoginPage(driver);
