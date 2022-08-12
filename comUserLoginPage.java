@@ -26,11 +26,12 @@ public class comUserLoginPage {
 	}
 	
 	//setting values for user login fields
-	public void setfieldvaluescomuserlogin(String username , String password) 
+	public void setfieldvaluescomuserlogin(String username , String password) throws InterruptedException 
 	{
-		
+		Thread.sleep(1000);
 		driver.findElement(comloginusername).sendKeys(username);
 		
+		Thread.sleep(1000);
 		driver.findElement(comloginpassword).sendKeys(password);
 		
 
@@ -39,6 +40,8 @@ public class comUserLoginPage {
 	//title verification
 	public void compreguserlogintitleverification()
 	{
+		
+		
 		String actualtitle = driver.getTitle();
 	    if(actualtitle.equals("COMPREG"))
 			{
@@ -53,9 +56,10 @@ public class comUserLoginPage {
 	}
 	
 	//verifying image displayed or not
-	public void compreguserloginimgdisplay()
+	public void compreguserloginimgdisplay() 
 	{
 		
+
 		WebElement userloginimage = driver.findElement(By.xpath("//*[@class='auth-layout']/div"));
 		if(userloginimage.isDisplayed()==true)
 		{
@@ -72,8 +76,9 @@ public class comUserLoginPage {
 	}
 	
 	//verifying compreg logo image displayed or not
-		public void compreglogoimagedisplay()
+		public void compreglogoimagedisplay() 
 		{
+			
 			
 
 			WebElement compreglogoimage = driver.findElement(By.xpath("//*[@class='auth-layout']/div/div[2]/img"));
@@ -94,20 +99,18 @@ public class comUserLoginPage {
 	public void compreguserloginlanguage()
 	{
 
+		
+
 		WebElement option1 = driver.findElement(By.xpath("//*[@class='select']/option[3]"));
-
-
-	System.out.println("language deutsch is selected from the options"+option1);
-	
-	WebElement option2 = driver.findElement(By.xpath("//*[@class='select']/option[2]"));
-
-
-	System.out.println("language français is selected from the options"+option2);
-	
-	WebElement option3 = driver.findElement(By.xpath("//*[@class='select']/option[1]"));
-
-
-	System.out.println("language english is selected from the options"+option3);
+		System.out.println("language deutsch is selected from the options"+option1);
+		
+		
+		WebElement option2 = driver.findElement(By.xpath("//*[@class='select']/option[2]"));
+		System.out.println("language français is selected from the options"+option2);
+		
+		
+		WebElement option3 = driver.findElement(By.xpath("//*[@class='select']/option[1]"));
+		System.out.println("language english is selected from the options"+option3);
 	
 
 
@@ -117,20 +120,20 @@ public class comUserLoginPage {
 	
 		
 	// login button click
-	public void login()
+	public void login() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		WebElement comloginbutton = driver.findElement(By.xpath("//*[@class='MuiContainer-root container-wrap MuiContainer-maxWidthXs']/form/div[5]/button"));
-		
-	
 		comloginbutton.click();
-		
-       System.out.println("Login button clicked successfully and redirected to user login page"+comloginbutton);
+        System.out.println("Login button clicked successfully and redirected to user login page"+comloginbutton);
 		
 	}
 	
 	//verification of  login successfully animator
-	public void animatorclick()
+	public void animatorclick() throws InterruptedException
 	{
+		
+
 		WebElement animatorclick = driver.findElement(By.xpath("//*[@class='Toastify__toast Toastify__toast-theme--light Toastify__toast--success']"));
 		animatorclick.click();
 		System.out.println("animator clicked"+animatorclick);
@@ -143,15 +146,18 @@ public class comUserLoginPage {
 	
 	//verification of change username click from menu
 	
-	public void changeusernameclick()
+	public void changeusernameclick() throws InterruptedException
 	{
 		
+		Thread.sleep(2000);
 		WebElement changeusernameclick = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[2]/div/div[2]/div[2]/div/div/div/div/div/div/ul/p"));
 		changeusernameclick.click();
 		System.out.println("change username clicked"+changeusernameclick);
 		
 		
 		//verification of change username field
+		
+		Thread.sleep(2000);
 		WebElement changeusernamewindowusername= driver.findElement(By.xpath("//*[@role='presentation']/div/div[2]/form/input"));
 		changeusernamewindowusername.sendKeys(Keys.CONTROL, Keys.chord("a")); //select all text in textbox
 		changeusernamewindowusername.sendKeys(Keys.BACK_SPACE); //delete it
@@ -170,6 +176,7 @@ public class comUserLoginPage {
 		
 		//verification of change username window close
 		
+		Thread.sleep(2000);
 		WebElement changeusernamewindowclosebutton = driver.findElement(By.xpath("//*[@role='presentation']/div[3]//*[name()='svg']"));
 
 		changeusernamewindowclosebutton.click();
@@ -180,7 +187,7 @@ public class comUserLoginPage {
 		dashboardnameandimageclick.click();
 		System.out.println("user's name and image clicked for disappearing the menu"+dashboardnameandimageclick);
 		
-		
+		Thread.sleep(2000);
 		dashboardnameandimageclick.click();
 		System.out.println("user's name and image clicked for accessing the menu again for changing password"+dashboardnameandimageclick);
 
@@ -188,26 +195,29 @@ public class comUserLoginPage {
 	
 		//verification of change password click from menu
 	
-	public void changepasswordclick() 
+	public void changepasswordclick() throws InterruptedException 
 	{
 		
+		Thread.sleep(2000);
 		WebElement changepasswordclick = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[2]/div/div[2]/div[2]/div/div/div/div/div/div/ul/p[2]"));
 		changepasswordclick.click();
 		System.out.println("change username clicked"+changepasswordclick);
 		
-		
+		Thread.sleep(2000);
 		WebElement oldpassword = driver.findElement(By.xpath("//*[@id='transition-modal-description']/form/input"));
 		oldpassword.sendKeys("divyakm1988");
 		
+		Thread.sleep(2000);
 		WebElement newpassword = driver.findElement(By.xpath("//*[@id='transition-modal-description']/form/input[2]"));
 		newpassword.sendKeys("");
 		
-		
+		Thread.sleep(2000);
 		WebElement confirmnewpassword = driver.findElement(By.xpath("//*[@id='transition-modal-description']/form/input[3]"));
 		confirmnewpassword.sendKeys("");
 		
 		//verification of change password submit button
 		
+		Thread.sleep(2000);
 		WebElement changepasswordsubmit = driver.findElement(By.xpath("//*[@id='transition-modal-description']/form/div[4]/button"));
 		changepasswordsubmit.click();
 		System.out.println("change password submit button is clicked"+changepasswordsubmit);
@@ -215,7 +225,7 @@ public class comUserLoginPage {
 		
 		//verification of close button in change password window
 
-		
+		Thread.sleep(2000);
 		WebElement changepasswordwindowclose = driver.findElement(By.xpath("//*[@role='presentation']/div[3]//*[name()='svg']"));
 
 		changepasswordwindowclose.click();
@@ -234,14 +244,15 @@ public class comUserLoginPage {
 	
 	//verification of sign out  cancel click from menu
 	
-	public void usersignoutclickcancel() 
+	public void usersignoutclickcancel() throws InterruptedException 
 	{
+		
 		
 		WebElement usersignoutclick1 = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[2]/div/div[2]/div[2]/div/div/div/div/div/div/ul/p[3]"));
 		usersignoutclick1.click();
 		System.out.println("user signout link is clicked"+usersignoutclick1);
 		
-				
+		
 		WebElement usersignoutcancel = driver.findElement(By.xpath("//*[@role='presentation']/div/div[2]/p[2]"));
 		usersignoutcancel.click();
 		System.out.println("user signout cancel is clicked"+usersignoutcancel);
@@ -263,7 +274,7 @@ public class comUserLoginPage {
 	
 	//verification of hello welcome click
 	
-	public void hellowelcomeclick()
+	public void hellowelcomeclick() throws InterruptedException
 	{
 		WebElement hellowelcomeclick = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div/div/div[2]/div/ul/li[3]/a/div/div/div"));
 		hellowelcomeclick.click();
@@ -275,14 +286,13 @@ public class comUserLoginPage {
 	
 //	public void usersignoutclickyes()
 //	{
-//		
+//		Thread.sleep(2000);
 //		WebElement usersignoutclick2 = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[2]/div/div[2]/div[2]/div/div/div/div/div/div/ul/p[3]"));
 //		usersignoutclick2.click();
 //		System.out.println("user signout link is clicked"+usersignoutclick2);
 //		
 //		
-//		
-//		
+//		Thread.sleep(2000);
 //		WebElement usersignoutyes = driver.findElement(By.xpath("//*[@role='presentation']/div/div[2]/p"));
 //		usersignoutyes.click();
 //		System.out.println("user signout yes is clicked"+usersignoutyes);

@@ -42,7 +42,7 @@ public class comUserLoginTest {
 	}
 	
 	@Test
-	public void comloginpagetest() 
+	public void comloginpagetest() throws InterruptedException 
 	{
 		
 		
