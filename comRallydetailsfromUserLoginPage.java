@@ -3,6 +3,7 @@ package DNSCompregModule1Pages;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -24,18 +25,34 @@ public class comRallydetailsfromUserLoginPage {
 
 	//verification of user dashboard upcoming events rally details click	
 
-	public void rallydetaisclick()
+	public void rallydetaisclick() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		WebElement rallydetaisclick = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[3]/div[2]/div/div/div[2]/a[2]"));
 		rallydetaisclick.click();
 		System.out.println("rally details clicked"+rallydetaisclick);
+		
 	}
 		
 	
 	//verification of rally listing table on dashboard rally details click
 	
-	public void rallylistingtable()
+	public void rallylistingtable() throws InterruptedException
 	{
+		
+		
+		//verification of rally listing tale upload file is viewable or not
+		
+		JavascriptExecutor js = (JavascriptExecutor)driver; 
+
+		Thread.sleep(3000);
+		WebElement rallylistinguploadfile= driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[4]/div[2]/div/div/div[2]/table/tbody/tr/td[5]/p"));
+
+		js.executeScript("arguments[0].scrollIntoView(true);", rallylistinguploadfile);
+		System.out.println("rally listing table upload file is viewable"+rallylistinguploadfile);
+		
+		
+		
 		
 			//verification of rally listing table image
 		
@@ -95,8 +112,9 @@ public class comRallydetailsfromUserLoginPage {
 			}
 			
 			
-			//verification of  rally listing table uploaded fileds click
+			//verification of  rally listing table uploaded files click
 			
+			Thread.sleep(2000);
 			WebElement rallylistinguploadedfilesclick = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[4]/div[2]/div/div/div[2]/table/tbody/tr/td[5]/p"));
 			rallylistinguploadedfilesclick.click();
 			System.out.println("rally listing uploaded files is clicked"+rallylistinguploadedfilesclick);
@@ -105,15 +123,17 @@ public class comRallydetailsfromUserLoginPage {
 			
 			//verification of uploaded files click window
 
-			
+			Thread.sleep(3000);
 			WebElement rallylistinguploadedfilesclickwindow = driver.findElement(By.xpath("//*[@role='presentation']/div[3]"));
-			rallylistinguploadedfilesclickwindow.click();
-			System.out.println("rally listing uploaded files window is displayed"+rallylistinguploadedfilesclickwindow);
+			if(rallylistinguploadedfilesclickwindow.isDisplayed()==true)
+			{
+				System.out.println("rally listing uploaded files window is displayed"+rallylistinguploadedfilesclickwindow);
 
+			}
 			
 
 			//verification of uploaded files click window field file name disabled or not
-
+			
 			
 			WebElement rallylistinguploadedfileswindowdisabledfilename = driver.findElement(By.xpath("//*[@role='presentation']/div[3]/p/div/div/div/input"));
 			if(rallylistinguploadedfileswindowdisabledfilename.isEnabled()==false)
@@ -138,7 +158,7 @@ public class comRallydetailsfromUserLoginPage {
 			
 			//verification of uploaded files click window field eye icon
 
-			
+			Thread.sleep(2000);
 			WebElement rallylistinguploadedfileswindoweyeicon = driver.findElement(By.xpath("//*[@role='presentation']/div[3]//*[name()='svg']"));
 			rallylistinguploadedfileswindoweyeicon.click();
 			System.out.println("rally listing uploaded files window eye icon is clicked"+rallylistinguploadedfileswindoweyeicon);

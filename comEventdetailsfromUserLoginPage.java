@@ -25,8 +25,9 @@ public class comEventdetailsfromUserLoginPage {
 	
 			//verification of user dashboard upcoming events event details click	
 	
-			public void eventdetaisclick()
+			public void eventdetailsclick() throws InterruptedException
 			{
+				Thread.sleep(1000);
 				WebElement eventdetailsclick = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[3]/div[2]/div/div/div[2]/a[1]"));
 				eventdetailsclick.click();
 				System.out.println("event details clicked"+eventdetailsclick);
@@ -35,7 +36,7 @@ public class comEventdetailsfromUserLoginPage {
 	
 				//verification of events quick information
 		
-				public void eventsinfoeventdetailsclick()
+				public void eventsinfoeventdetailsclick() throws InterruptedException
 				{
 			
 				//verification of events quick information mail id
@@ -132,18 +133,24 @@ public class comEventdetailsfromUserLoginPage {
 
 				}
 
-		
-		
-//		WebElement eventsinfobyorganiserclick = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[3]/div/div[2]/p/a/span"));
-//		eventsinfobyorganiserclick.click();
-//		System.out.println("by organiser from events is clicked"+eventsinfobyorganiserclick);
+				
+				//verification of by organiser click from events info
+				
+				Thread.sleep(2000);
+				WebElement eventsinfobyorganiserclick = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[3]/div/div[2]/p/a/span"));
+				eventsinfobyorganiserclick.click();
+				System.out.println("by organiser from events is clicked"+eventsinfobyorganiserclick);
+				
+				Thread.sleep(1000);
+				driver.navigate().back();
+			
 	}
 	
 				
 				//verification of events full details from event details click of dashboard page
 	
 	
-				public void eventsfulldetailsfromeventdetailstab()
+				public void eventsfulldetailsfromeventdetailstab() throws InterruptedException
 				{
 					
 					//verification of event details event name 
@@ -296,18 +303,16 @@ public class comEventdetailsfromUserLoginPage {
 					}
 					
 					
-				
-
+					
 				}
 				
 				
-				
-
 				//verification of event forms tab click
 
 				
-				public void eventformstabclick()
+				public void eventformstabclick() throws InterruptedException
 				{
+					Thread.sleep(3000);
 					WebElement eventformstabclick= driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[4]/div/div/h3[3]"));
 					eventformstabclick.click();
 					System.out.println("event forms tab is clicked"+eventformstabclick);
@@ -315,8 +320,89 @@ public class comEventdetailsfromUserLoginPage {
 					
 					
 				}
-	
-		
+				
+				
+				//verification of event form elements
+				
+				public void eventformselements() throws InterruptedException
+				{
+					
+					//verification of form label
+					Thread.sleep(2000);
+					WebElement eventformslabelfillup= driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[4]/div[2]/div/div/div/h4"));
+					if(eventformslabelfillup.isDisplayed()==true)
+					{
+						System.out.println("event forms label is displayed"+eventformslabelfillup);
+
+					}
+					
+					
+				}
+
+				
+				//verification of event forms tab click
+				
+				
+				public void eventdetailstabclick() throws InterruptedException
+				{
+					Thread.sleep(3000);
+					WebElement eventdetailstabclick= driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[4]/div/div/h3[1]"));
+					eventdetailstabclick.click();
+					System.out.println("event details tab is clicked"+eventdetailstabclick);
+					
+					
+				//verification of  event details table uploaded files click
+					
+					Thread.sleep(2000);
+					WebElement eventdetailstableuploadedfilesclick = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[4]/div[2]/div[15]/div[2]"));
+					eventdetailstableuploadedfilesclick.click();
+					System.out.println("event details uploaded files is clicked"+eventdetailstableuploadedfilesclick);
+
+					
+					//verification of event details uploaded files click window
+
+					Thread.sleep(2000);
+					WebElement eventdetailsuploadedfilesclickwindow = driver.findElement(By.xpath("//*[@role='presentation']/div[3]/p[1]/div"));
+					if(eventdetailsuploadedfilesclickwindow.isDisplayed()==true)
+					{
+						System.out.println("event details uploaded files window is displayed"+eventdetailsuploadedfilesclickwindow);
+
+					}
+					
+					
+					//verification of uploaded files click window field file name disabled or not
+					
+					
+					WebElement eventdetailsuploadedfileswindowdisabledfilename = driver.findElement(By.xpath("//*[@role='presentation']/div[3]/p[1]/div/div/div/input"));
+					if(eventdetailsuploadedfileswindowdisabledfilename.isEnabled()==false)
+					{
+						System.out.println("event details uploaded files window file name field is disabled"+eventdetailsuploadedfileswindowdisabledfilename);
+
+					}
+					
+					
+					//verification of uploaded files click window field dropdown disabled or not
+
+					
+					WebElement eventdetailsuploadedfileswindowdisabledropdown = driver.findElement(By.xpath("//*[@role='presentation']/div[3]/p[1]/div/div/div[2]/select/option[1]"));
+					if(eventdetailsuploadedfileswindowdisabledropdown.isEnabled()==false)
+					{
+						System.out.println("event details uploaded files window dropdown field is disabled"+eventdetailsuploadedfileswindowdisabledropdown);
+
+					}
+					
+					
+					
+					
+					//verification of uploaded files click window field eye icon
+
+					Thread.sleep(2000);
+					WebElement eventdetailsuploadedfileswindoweyeicon = driver.findElement(By.xpath("//*[@role='presentation']/div[3]/p[1]/div/div/div[4]/div//*[name()='svg']"));
+					eventdetailsuploadedfileswindoweyeicon.click();
+					System.out.println("event details uploaded files window eye icon is clicked"+eventdetailsuploadedfileswindoweyeicon);
+
+			
+				}
 }
 
 

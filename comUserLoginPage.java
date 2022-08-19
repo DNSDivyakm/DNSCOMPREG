@@ -1,11 +1,19 @@
 package DNSCompregModule1Pages;
 
+
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
+
 
 public class comUserLoginPage {
 
@@ -13,6 +21,7 @@ public class comUserLoginPage {
 	
 	By comloginusername= By.name("username");
 	By comloginpassword=By.name("password");
+	
 	
 	
 
@@ -36,6 +45,8 @@ public class comUserLoginPage {
 		
 
 	}
+	
+	
 	
 	//title verification
 	public void compreguserlogintitleverification()
@@ -146,7 +157,7 @@ public class comUserLoginPage {
 	
 	//verification of change username click from menu
 	
-	public void changeusernameclick() throws InterruptedException
+	public void changeusernameclick() throws InterruptedException, IOException
 	{
 		
 		Thread.sleep(2000);
@@ -158,6 +169,10 @@ public class comUserLoginPage {
 		//verification of change username field
 		
 		Thread.sleep(2000);
+		
+		//taking screenshot of change username window
+		this.takeSnapShot(driver, "C:\\Users\\ashok\\eclipse-workspace\\Webdriver\\Screenshot\\test1.png");
+		
 		WebElement changeusernamewindowusername= driver.findElement(By.xpath("//*[@role='presentation']/div/div[2]/form/input"));
 		changeusernamewindowusername.sendKeys(Keys.CONTROL, Keys.chord("a")); //select all text in textbox
 		changeusernamewindowusername.sendKeys(Keys.BACK_SPACE); //delete it
@@ -208,6 +223,7 @@ public class comUserLoginPage {
 		oldpassword.sendKeys("divyakm1988");
 		
 		Thread.sleep(2000);
+		
 		WebElement newpassword = driver.findElement(By.xpath("//*[@id='transition-modal-description']/form/input[2]"));
 		newpassword.sendKeys("");
 		
@@ -231,32 +247,10 @@ public class comUserLoginPage {
 		changepasswordwindowclose.click();
 		System.out.println("participants change password close button is clicked "+changepasswordwindowclose);	
 		
-		
 		WebElement dashboardnameandimageclick = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[2]/div/div[2]/div[2]/div/div/div/div/button/span"));
 		dashboardnameandimageclick.click();
 		System.out.println("user's name and image clicked for disappearing the menu"+dashboardnameandimageclick);
 		
-		
-		
-		
-	}
-	
-	
-	//verification of sign out  cancel click from menu
-	
-	public void usersignoutclickcancel() throws InterruptedException 
-	{
-		
-		
-		WebElement usersignoutclick1 = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[2]/div/div[2]/div[2]/div/div/div/div/div/div/ul/p[3]"));
-		usersignoutclick1.click();
-		System.out.println("user signout link is clicked"+usersignoutclick1);
-		
-		
-		WebElement usersignoutcancel = driver.findElement(By.xpath("//*[@role='presentation']/div/div[2]/p[2]"));
-		usersignoutcancel.click();
-		System.out.println("user signout cancel is clicked"+usersignoutcancel);
-
 		
 	}
 	
@@ -264,11 +258,15 @@ public class comUserLoginPage {
 	
 	//verification of welcome image displayed or not
 	
-	public void hellowelcomeimage()
+	public void hellowelcomeimage() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		WebElement hellowelcomeimage = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div/div/div[2]/div/ul/li[3]/a/div/img"));
-		hellowelcomeimage.click();
+		if(hellowelcomeimage.isDisplayed()==true)
+		{
 		System.out.println("welcome image is displayed"+hellowelcomeimage);
+		}
+		
 	}
 	
 	
@@ -276,29 +274,83 @@ public class comUserLoginPage {
 	
 	public void hellowelcomeclick() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		WebElement hellowelcomeclick = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div/div/div[2]/div/ul/li[3]/a/div/div/div"));
 		hellowelcomeclick.click();
-		System.out.println("users welcome hello image clicked "+hellowelcomeclick);
+		System.out.println("users welcome hello is clicked "+hellowelcomeclick);
+		Thread.sleep(3000);
+		
 	}
 	
 	
+	//verification of sign out  cancel click from menu
+	
+		public void usersignoutclickcancel() throws InterruptedException 
+		{
+			
+			Thread.sleep(3000);
+			WebElement dashboardnameandimageclick = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[2]/div/div[2]/div[2]/div/div/div/div/button/span"));
+			dashboardnameandimageclick.click();
+			System.out.println("user's name and image clicked for disappearing the menu"+dashboardnameandimageclick);
+			
+			Thread.sleep(3000);
+			WebElement usersignoutclick1 = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[2]/div/div[2]/div[2]/div/div/div/div/div/div/ul/p[3]"));
+			usersignoutclick1.click();
+			System.out.println("user signout link is clicked"+usersignoutclick1);
+			
+			Thread.sleep(3000);
+			WebElement usersignoutcancel = driver.findElement(By.xpath("//*[@role='presentation']/div/div[2]/p[2]"));
+			usersignoutcancel.click();
+			System.out.println("user signout cancel is clicked"+usersignoutcancel);
+
+			
+		}
+		
 	//verification of sign out click from menu - commented for next tests
 	
-//	public void usersignoutclickyes()
-//	{
-//		Thread.sleep(2000);
-//		WebElement usersignoutclick2 = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[2]/div/div[2]/div[2]/div/div/div/div/div/div/ul/p[3]"));
-//		usersignoutclick2.click();
-//		System.out.println("user signout link is clicked"+usersignoutclick2);
-//		
-//		
-//		Thread.sleep(2000);
-//		WebElement usersignoutyes = driver.findElement(By.xpath("//*[@role='presentation']/div/div[2]/p"));
-//		usersignoutyes.click();
-//		System.out.println("user signout yes is clicked"+usersignoutyes);
-//
-//		
-//	}
+	public void usersignoutclickyes() throws InterruptedException
+	{
+		Thread.sleep(3000);
+		WebElement usersignoutclick2 = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[2]/div/div[2]/div[2]/div/div/div/div/div/div/ul/p[3]"));
+		usersignoutclick2.click();
+		System.out.println("user signout link is clicked"+usersignoutclick2);
+		
+		Thread.sleep(3000);
+		WebElement usersignoutyes = driver.findElement(By.xpath("//*[@role='presentation']/div/div[2]/p"));
+		usersignoutyes.click();
+		System.out.println("user signout yes is clicked"+usersignoutyes);
+
+		
+	}
+	
+	
+	//screenshot 
+	
+	public void takeSnapShot(WebDriver webdriver,String fileWithPath) throws IOException 
+	{
+
+        //Convert web driver object to TakeScreenshot
+
+        TakesScreenshot scrShot =((TakesScreenshot)webdriver);
+
+        //Call getScreenshotAs method to create image file
+
+                File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
+
+            //Move image file to new destination
+
+                File DestFile=new File(fileWithPath);
+
+                //Copy file at destination
+
+                FileUtils.copyFile(SrcFile, DestFile);
+
+    }
+	
+	
+	
+	
+
 	
 }
 

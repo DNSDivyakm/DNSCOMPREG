@@ -21,8 +21,9 @@ public class comOrganiserfromUserLoginPage {
 	
 	//verification of user dashboard upcoming events organiser details click
 	
-	public void organiserdetailsclick()
+	public void organiserdetailsclick() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		WebElement organiserdetails = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[3]/div[2]/div/div/div[2]/a[3]"));
 		organiserdetails.click();
 		System.out.println("organiser details clicked"+organiserdetails);
@@ -168,9 +169,10 @@ public class comOrganiserfromUserLoginPage {
 	//verification of organiser contact table display
 	
 	
-	public void organisercontactdislay()
+	public void organisercontactdislay() throws InterruptedException
 	{
 		
+		Thread.sleep(1000);
 		WebElement organisercontactimage = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[5]/div[2]/div/div[2]/table/tbody/tr[1]/td/div/img"));
 		if(organisercontactimage.isDisplayed()==true)
 		{

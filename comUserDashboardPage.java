@@ -183,6 +183,21 @@ public class comUserDashboardPage {
 			
 			
 		
+			//verification of past events click in user's page
+			
+			public void pasteventsclick() throws InterruptedException
+			{
+				
+					Thread.sleep(2000);
+					WebElement pasteventsclick = driver.findElement(By.xpath("//*[@class='dashboard-layout']/div[2]/div[3]/div/div[2]/div"));
+					
+					pasteventsclick.click();
+					
+					System.out.println("past events clicked in user dashboard page"+pasteventsclick);
+
+			}
+			
+			
 			
 			//verification of change username in the dashboard
 			
@@ -298,7 +313,7 @@ public class comUserDashboardPage {
 			
 			//verification of participant details
 			
-			public void participantprofiledetailsfromprofileclickdetails() throws InterruptedException
+			public void participantprofiledetailsfromprofileclick() throws InterruptedException
 			{
 				
 				//verification of firstname field
